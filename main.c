@@ -15,8 +15,15 @@
 
 int main()
 {
-    char p[50] = "hello word you can do it";
-    int a = ft_strlen(NULL);
-    printf("%d",a);
-    
+	int fd;
+	char *str;
+	int i = 1;
+	fd = open("te.txt",O_RDONLY);
+	str = get_next_line(fd);
+	while(i < 27)
+	{
+		printf("LIEN %d: %s\n",i , str[i]);
+        i++;
+	}
+	return (0);
 }
