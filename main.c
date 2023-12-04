@@ -6,7 +6,7 @@
 /*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:41:40 by bamssaye          #+#    #+#             */
-/*   Updated: 2023/12/04 03:22:33 by bamssaye         ###   ########.fr       */
+/*   Updated: 2023/12/04 04:30:15 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(void)
 	char	*line;
 	int		i;
 
-	fd = open("test.txt", O_RDONLY);
+	fd = open("te.txt", O_RDONLY);
 	if (fd == -1)
 	{
 		printf("Error opening file\n");
