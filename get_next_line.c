@@ -6,78 +6,92 @@
 /*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:10:43 by bamssaye          #+#    #+#             */
-/*   Updated: 2023/11/30 22:40:29 by bamssaye         ###   ########.fr       */
+/*   Updated: 2023/12/04 03:21:34 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*get_content(int fd, char *buffe, char *archive)
+
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int		readlien;
-	char	*tmp;
-
-	readlien = 1;
-	while (readlien)
-	{
-		readlien = read(fd, buffe, BUFFER_SIZE);
-		if (readlien == -1)
-        {
-
-            return (0);
-        }
-		else if (readlien == 0)
-			break ;
-		buffe[readlien] = '\0';
-		if (!archive)
-			archive = ft_strdup("");
-        tmp = archive;
-		archive = ft_strjoin(tmp, buffe);
-		free(tmp);
-		tmp = NULL;
-		if (ft_strchr(buffe, '\n'))
-			break ;
-	}
-	return (archive);
-}
-
-static char	*get_line(char *content)
-{
+	size_t	total_size;
+	char	*ptr;
 	size_t	i;
-	char	*archive;
 
 	i = 0;
-	while (content[i] != '\n' && content[i] != '\0')
-		i++;
-	if (content[i] == '\0' || content[1] == '\0')
-		return (0);
-	archive = ft_substr(content, i + 1, ft_strlen(content) - i);
-	if (!*archive)
+	if (!nmemb || !size)
 	{
-		free(archive);
-		archive = NULL;
+		ptr = malloc(1);
+		if (ptr == NULL)
+			return (NULL);
+		ptr[0] = 0;
+		return (ptr);
 	}
-	content[i + 1] = '\0';
-	return (archive);
+	total_size = nmemb * size;
+	if (total_size / size != nmemb)
+		return (NULL);
+	ptr = malloc(total_size);
+	if (ptr == NULL)
+		return (NULL);
+	while (i < total_size)
+	{
+		*((unsigned char *)ptr + i) = '\0';
+		i++;
+	}
+	return (ptr);
 }
+int	ft_get_line(char *line, char *buff)
+{
+	size_t	i;
+	size_t	j;
 
+	i = 0;
+	j = 0;
+	while (line[i] && line[i] != '\n')
+		i++;
+	if (line[i] == '\n')
+	{
+		i++;
+		while (line[i])
+		{
+			buff[j] = line[i];
+			i++;
+			j++;
+		}
+		buff[j] = '\0';
+		line[i - j] = '\0';
+		return (1);
+	}
+	return (0);
+}
 char	*get_next_line(int fd)
 {
-	char		*content;
-	char		*buffe;
-	static char	*archive;
+	static char	*buff;
+	char		*line;
+	int			bytes_read;
 
-	if (BUFFER_SIZE <= 0 || fd < 0)
-		return (0);
-	buffe = (char *)malloc((sizeof(char) * BUFFER_SIZE) + 1);
-	if (!buffe)
+	line = ft_calloc(1, sizeof(char));
+	if(!line)
 		return (NULL);
-	content = get_content(fd, buffe, archive);
-	free(buffe);
-	buffe = NULL;
-	if (!content)
-		return (NULL);
-	archive = get_line(content);
-	return (content);
+	if (!buff)
+		buff = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	while (buff && line)
+	{
+		line = ft_strjoin(line, buff);
+		if (ft_get_line(line, buff))
+			return (line);
+		bytes_read = read(fd, buff, BUFFER_SIZE);
+		if (bytes_read <= 0)
+		{
+			free(buff);
+			buff = NULL;
+			if (line[0] != '\0')
+				return (line);
+			free(line);
+			return (NULL);
+		}
+		buff[bytes_read] = '\0';
+	}
+	return (NULL);
 }
-
