@@ -1,80 +1,27 @@
-Wikipédia l'encyclopédie libre
+Creating your test is super easy. Just copy and paste your questions to a template and share it.
 
-Rechercher dans Wikipédia
 
-Créer un compte
+MAKE LEARNING FUN
+Keep your students hooked from start to finish with a test that’s fun and engaging on any device.
 
-Outils personnelsreplié
 
-Accueil
-Portails thématiques
+SMART & INTERACTIVE
+Show different Thank You screens depending on your students’ scores, and easily keep track of their progress.
 
-Article au hasard
 
-Contact
+QUICK REPORTING
+Set up self-notifications so you know when people are done—then dive into Typeform's analysis tools to give each test taker their results.
 
-Contribuer
+How to make an online test more engaging?
+Make every question clear and concise for easy understanding
 
-Débuter sur Wikipédia
+Add a description under each question to add more context
 
------------------------------------------------------------
-Aide
-Communauté
-Modifications récentes
-Faire un don
-Outils
-Pages liées
-Suivi des pages liées
-Téléverser un fichier
-Pages spéciales
-Lien permanent
-Informations sur la page
-Citer cette page
-Élément Wikidata
-Modifier les liens interlangues
-Imprimer / exporter
-Créer un livre
-Télécharger comme PDF
-Version imprimable
-Dans d’autres projets
-Wikimedia Commons
-ArticleDiscussion
-LireModifierModifier le codeVoir l’historique
------------------------------------------------------------
+Make testing fun—add GIFS, videos or images to keep people entertained
 
-Brouette
+Show the correct answer using clever logic features
 
-C’est un outil ergonomique pour le transport de matériaux ou d’outils sur des terrains qui peuvent être accidentés mais nécessairement peu inclinés. Indispensable sur les chantiers, dans les fermes ou dans les jardins, elle facilite le déplacement de charges qui peuvent être lourdes ou encombrantes. Le principe du levier associé à la position du centre de gravité vers l’aplomb du point d’appui (la roue), lui confère une grande efficacité.
+Organize your results in a flash with our native Google Sheets Integration, or connect to your favorite apps like Mailchimp, Trello or Evernote through
 
-Sommaire
-1	Éléments d’histoire de la brouette
-1.1	La question des origines
-1.2	Une diffusion assez lente
-1.3	La brouette dans les textes
-2	Étude technologique de la brouette
-2.1	Analyse fonctionnelle
-2.1.1	Fonction principale, définition
-2.1.2	Constitution de la solution « brouette »
-2.1.3	Variantes – classification
-2.2	Analyse mécanique
-2.2.1	La roue
-2.2.2	Influence de la position longitudinale de la caisse
-2.2.3	Aptitude au basculement
-2.2.4	Conclusions constructives
-3	Perspectives
-4	Autour de la brouette
-4.1	Dans la littérature et dans les arts
-4.2	Polysémie du mot brouette
-4.3	Jeux d’enfants (petits ou grands…)
-4.4	Décoration
-5	En images d’hier et d’aujourd’hui
-6	Notes et références
-7	Voir aussi
-7.1	Bibliographie
-7.2	Liens externes
-Éléments d’histoire de la brouette
-La question des origines
-
-Variantes selon le nombre de roues
-Si la brouette selon son étymologie a deux roues, c’est surtout lorsqu’elle n’en a qu’une qu’elle se caractérise comme « brouette. » Toutefois, quand elle a deux roues, celles-ci sont coaxiales.
-Critiques : La brouette à deux roues permet de plus grandes contenances, plus stable elle peut se conduire d’une seule main mais elle est très difficile, voire éprouvante, à mener sur les terrains accidentés tandis que la brouette à une roue se joue des irrégularités du terrain. Par ailleurs la place nécessaire pour manœuvrer la brouette à deux roues dépend de la largeur de l’essieu.
+What’s a good way to get more out of the test maker?
+Cliché warning, but online testing doesn't have to be boring—use your imagination! Say you're making a vocabulary test and your students think they know the drill. Why not try a multiple choice question format for one half of the exam, and then mix it up with yes/no questions and fill-in-the-blank answers for the rest? Check out this question type list to get your imagination going.
