@@ -6,7 +6,7 @@
 /*   By: bamssaye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:10:56 by bamssaye          #+#    #+#             */
-/*   Updated: 2023/12/04 04:08:59 by bamssaye         ###   ########.fr       */
+/*   Updated: 2023/12/04 05:58:18 by bamssaye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(char *s1, char *s2)
 
 	i = 0;
 	j = 0;
-	if(!s1 || !s2)
+	if (!s1 || !s2)
 		return (NULL);
 	str = (char *)malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
@@ -51,6 +51,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	free(s1);
 	return (str);
 }
+
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t			i;
@@ -67,6 +68,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	}
 	return (p);
 }
+
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*p;
@@ -78,6 +80,6 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	p = malloc(s);
 	if (!p)
 		return (NULL);
-	ft_memset(p, 0, s);
+	ft_memset (p, 0, s);
 	return (p);
 }
