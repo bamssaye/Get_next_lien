@@ -12,6 +12,35 @@
 
 #include "get_next_line_bonus.h"
 
+static int	ft_getline(char *getline, char *buffer);
+static char	*ft_free(char *getline, char **buffer);
+
+char	*get_next_line(int fd)
+{
+	static char	*buffer[1024];
+	char		*getline;
+	int			bytes;
+
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	getline = ft_calloc(1, sizeof(char));
+	if (!getline)
+		return (NULL);
+	if (!buffer[fd])
+		buffer[fd] = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	while (1)
+	{
+		getline = ft_strjoin(getline, buffer[fd]);
+		if (ft_getline(getline, buffer[fd]))
+			return (getline);
+		bytes = read(fd, buffer[fd], BUFFER_SIZE);
+		if (bytes <= 0)
+			return (ft_free(getline, &buffer[fd]));
+		buffer[fd][bytes] = '\0';
+	}
+	return (NULL);
+}
+
 static int	ft_getline(char *getline, char *buffer)
 {
 	size_t	i;
@@ -39,31 +68,5 @@ static char	*ft_free(char *getline, char **buffer)
 	if (*getline)
 		return (getline);
 	free(getline);
-	return (NULL);
-}
-
-char	*get_next_line(int fd)
-{
-	static char	*buffer[1024];
-	char		*getline;
-	int			bytes;
-
-	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (NULL);
-	getline = ft_calloc(1, sizeof(char));
-	if (!getline)
-		return (NULL);
-	if (!buffer[fd])
-		buffer[fd] = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	while (1)
-	{
-		getline = ft_strjoin(getline, buffer[fd]);
-		if (ft_getline(getline, buffer[fd]))
-			return (getline);
-		bytes = read(fd, buffer[fd], BUFFER_SIZE);
-		if (bytes <= 0)
-			return (ft_free(getline, &buffer[fd]));
-		buffer[fd][bytes] = '\0';
-	}
 	return (NULL);
 }
