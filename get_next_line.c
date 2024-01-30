@@ -55,7 +55,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	if (!buffer)
 		buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
-	while (buffer && getline)
+	while (1)
 	{
 		getline = ft_strjoin(getline, buffer);
 		if (ft_getline(getline, buffer))
